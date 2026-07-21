@@ -15,3 +15,5 @@
 - Whenever you are making Api call so pass axios=>{withCreditionals:true} 
 - Install redux toolkit -  https://redux-toolkit.js.org/tutorials/quick-start
 - Configure store => Provider => createSlice =>add reducer to store
+- You should not access other route without login
+-If token is not present , redirect user to login page
