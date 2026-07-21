@@ -6,39 +6,47 @@ import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants';
 
 const Login = () => {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-    const [email,setEmail] = useState("dhoni@gmail.com");
-    const [password,setPassword] = useState("dhoni@321")
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("dhoni@gmail.com");
+  const [password, setPassword] = useState("dhoni@321");
+  const [error, setError] = useState("")
 
-    const handleLogin = async()=>{
-       try {
-         const res = await axios.post(BASE_URL+"/login",{
-            email,
-            password
-        },{withCredentials:true})
-        dispatch(addUser(res.data.isValid));
-        navigate("/")
-       } catch (error) {
-        console.error(error)
-       }
+  const handleLogin = async () => {
+    try {
+      const res = await axios.post(BASE_URL + "/login", {
+        email,
+        password
+      }, { withCredentials: true })
+      dispatch(addUser(res.data.isValid));
+      navigate("/")
+    } catch (err) {
+      if (err.response && err.response.data) {
+        console.log(err.response)
+        setError(err.response.data.msg || err.response.data.error || "Login failed");
+      } else {
+        setError("Login failed");
+      }
+      console.error(err);
     }
+  }
   return (
     <>
- <div className='flex justify-center mx-1'>
-     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-  <legend className="fieldset-legend">Login</legend>
+      <div className='flex justify-center mx-1'>
+        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+          <legend className="fieldset-legend">Login</legend>
 
-  <label className="label">Email</label>
-  <input type="email" value={email} className="input" placeholder="Email"
-  onChange={(e)=>setEmail(e.target.value)} />
-  <label className="label">Password</label>
-  <input type="password" value={password} className="input" placeholder="Password" 
-  onChange={(e)=>setPassword(e.target.value)}/>
+          <label className="label">Email</label>
+          <input type="email" value={email} className="input" placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)} />
+          <label className="label">Password</label>
+          <input type="password" value={password} className="input" placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)} />
+          <p className='text-red-500'>{error}</p>
 
-  <button className="btn btn-neutral mt-4" onClick={handleLogin}>Login</button>
-</fieldset>
- </div>
+          <button className="btn btn-neutral mt-4" onClick={handleLogin}>Login</button>
+        </fieldset>
+      </div>
     </>
   )
 }
