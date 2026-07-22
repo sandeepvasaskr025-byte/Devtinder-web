@@ -9,7 +9,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store)=>store.user)
-  console.log(user);
   const handleLogout = async()=>{
     await axios.post(BASE_URL+"/logout",{},{withCredentials:true})
     dispatch(removeUser())

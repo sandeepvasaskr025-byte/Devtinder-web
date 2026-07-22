@@ -22,7 +22,6 @@ const Login = () => {
       navigate("/")
     } catch (err) {
       if (err.response && err.response.data) {
-        console.log(err.response)
         setError(err.response.data.msg || err.response.data.error || "Login failed");
       } else {
         setError("Login failed");
