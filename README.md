@@ -23,3 +23,4 @@
 - Edit Profile features
 - Show Toast Message on save of profiles
 - See my all connections
+- See all my Connection Request

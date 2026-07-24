@@ -25,7 +25,7 @@ const Feed = () => {
         if (!feed || !feed.data || feed.data.length === 0) {
             getFeed();
         }
-    }, [feed]);
+    }, []);
     if (!feed || !feed.data || feed.data.length === 0) {
         return <div>Loading feed...</div>;
     }
