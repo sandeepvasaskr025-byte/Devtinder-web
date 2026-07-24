@@ -19,4 +19,7 @@
 - If token is not present , redirect user to login page
 - Logout
 - Get the feed and add the feed in the store
-- built the user card on feed
+- Built the user card on feed
+- Edit Profile features
+- Show Toast Message on save of profiles
+- See my all connections

@@ -65,11 +65,11 @@ const EditProfile = ({ user }) => {
                     <UserCard user={{ firstName, lastName, age, gender, photoUrl, about }} />
                 </div>
             </div>
-            {showToast&&<div className="toast toast-top toast-center">
+            {showToast&& (<div className="toast toast-top toast-center">
                 <div className="alert alert-success">
                     <span>Profile updated successfully.</span>
                 </div>
-            </div>}
+            </div>)}
         </>
     )
 }
