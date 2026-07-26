@@ -24,3 +24,5 @@
 - Show Toast Message on save of profiles
 - See my all connections
 - See all my Connection Request
+- Accept/Reject connection request
+- Send/Ignore the user card from the feed

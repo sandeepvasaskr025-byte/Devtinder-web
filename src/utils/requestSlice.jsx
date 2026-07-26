@@ -12,4 +12,4 @@ const requestSlice = createSlice({
 })
 
 export const {addRequest,removeRequest} = requestSlice.actions;
-export default requsetSlice.reducer;
+export default requestSlice.reducer;
