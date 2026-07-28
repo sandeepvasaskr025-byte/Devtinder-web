@@ -26,3 +26,4 @@
 - See all my Connection Request
 - Accept/Reject connection request
 - Send/Ignore the user card from the feed
+- Signup new User
