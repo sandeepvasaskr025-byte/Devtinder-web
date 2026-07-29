@@ -27,3 +27,7 @@
 - Accept/Reject connection request
 - Send/Ignore the user card from the feed
 - Signup new User
+
+# Deployment
+- Signup AWS
+- Launch instance 
